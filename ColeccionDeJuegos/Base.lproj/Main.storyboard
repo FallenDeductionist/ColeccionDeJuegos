@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" id="ARV-aH-zBG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="BUs-jK-t1t">
                             <connections>
-                                <segue destination="TDM-QX-FPY" kind="show" id="jlZ-k6-boY"/>
+                                <segue destination="TDM-QX-FPY" kind="show" identifier="juegoSegue" id="jlZ-k6-boY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -76,12 +76,30 @@
                                     <action selector="agregarTapped:" destination="TDM-QX-FPY" eventType="touchUpInside" id="GOa-A3-mLW"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rZt-3e-CLb">
+                                <rect key="frame" x="159.5" y="349" width="55" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="p9E-DO-bLu">
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp8-YU-lTd">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="30"/>
+                                                <state key="normal" title="Eliminar"/>
+                                                <connections>
+                                                    <action selector="eliminarTapped:" destination="TDM-QX-FPY" eventType="touchUpInside" id="h1r-lc-d3v"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="puI-h1-Hxs" firstAttribute="top" secondItem="5Iw-qz-Hm1" secondAttribute="top" constant="20" id="5mv-h6-rTO"/>
                             <constraint firstItem="ifY-tV-CBN" firstAttribute="width" secondItem="puI-h1-Hxs" secondAttribute="width" id="E0E-PL-I45"/>
                             <constraint firstItem="icp-iE-Rd6" firstAttribute="centerX" secondItem="sx5-oN-MuG" secondAttribute="centerX" id="F1h-UT-1rR"/>
+                            <constraint firstItem="rZt-3e-CLb" firstAttribute="centerX" secondItem="sx5-oN-MuG" secondAttribute="centerX" id="PCP-nL-Vju"/>
                             <constraint firstItem="ifY-tV-CBN" firstAttribute="centerX" secondItem="sx5-oN-MuG" secondAttribute="centerX" id="Tgr-5l-gTh"/>
                             <constraint firstItem="puI-h1-Hxs" firstAttribute="centerX" secondItem="sx5-oN-MuG" secondAttribute="centerX" id="YQp-pk-oA3"/>
                             <constraint firstItem="icp-iE-Rd6" firstAttribute="top" secondItem="ifY-tV-CBN" secondAttribute="bottom" constant="20" id="YyD-H5-cUi"/>
@@ -105,6 +123,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JuegoImageView" destination="puI-h1-Hxs" id="GJq-LQ-Smg"/>
+                        <outlet property="agregarActualizarBoton" destination="icp-iE-Rd6" id="l9V-mK-VLG"/>
+                        <outlet property="eliminarBoton" destination="cp8-YU-lTd" id="lgB-aC-bnS"/>
                         <outlet property="tituloTextField" destination="ifY-tV-CBN" id="72d-8g-lox"/>
                     </connections>
                 </viewController>
